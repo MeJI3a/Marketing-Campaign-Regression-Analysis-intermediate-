@@ -1,4 +1,4 @@
-# Project 3: Marketing Campaign Regression Analysis
+# Marketing Campaign Regression Analysis
 
 ## Overview
 
