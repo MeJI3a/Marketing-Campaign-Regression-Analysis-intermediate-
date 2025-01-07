@@ -86,16 +86,36 @@ This project explores marketing campaign data to understand and predict revenue 
   - `Matplotlib` and `Seaborn`: Data visualization.
 
 ---
+### Insights from Regression Models and Feature Importance
 
+#### 1. Polynomial Regression
+- **R-squared: 0.4847**: The polynomial regression model explained about 48.47% of the variance in the data. This is a moderate fit, which suggests that there may be non-linear relationships between the features and the target variable (revenue). 
+- **Insight**: While polynomial regression captures some non-linear relationships, its R-squared value indicates that a significant portion of the variance is still unexplained, suggesting room for model improvement.
+
+#### 2. Regularization with Ridge Regression
+- **R-squared: 0.5761**: The ridge regression model, which applies regularization to prevent overfitting, explains 57.61% of the variance in the data. The model's performance is better than polynomial regression, suggesting that regularization helps improve the fit by preventing model complexity from growing too large.
+- **Insight**: The regularization improves model performance, making it more generalizable and reducing overfitting. This is an important technique when working with data that may have multicollinearity or a high number of features.
+
+#### 3. Random Forest Regression
+- **R-squared: 0.2984**: The random forest model performed less well with an R-squared value of 29.84%. This suggests that, while random forests are powerful models capable of capturing complex relationships, they did not perform well in this case, possibly due to the nature of the data or a need for hyperparameter tuning.
+- **Insight**: Although random forests can handle complex data, they may not always perform better than simpler models, especially if the data does not have strong non-linear relationships or the model parameters are not optimized.
+
+#### 4. Assessing the Influence of Variables
+- **Feature Importance**: The feature importance results indicate that **Marketing Spend (mark_spent)** is the most important variable for predicting revenue. It has an importance score of **1.0**, meaning it has the greatest impact on the model's predictions.
+- **Insight**: Since marketing spend is the most important variable, focusing on optimizing the marketing budget and spend allocation may have the largest effect on improving revenue. The other features, such as impressions, clicks, and leads, likely have a smaller impact, which suggests that future models should focus on understanding and optimizing marketing spend.
+
+### Conclusion
+- Polynomial and ridge regression both perform better than random forest regression in this scenario, suggesting that non-linear relationships and regularization can enhance model accuracy.
+- Marketing spend is the most influential variable in predicting revenue, highlighting its importance in designing marketing strategies.
+
+---
 ## Future Work
 
 1. **Feature Engineering**:
    - Explore additional features like campaign category or temporal patterns.
 2. **Outlier Management**:
    - Investigate and handle outliers in revenue to improve model accuracy.
-3. **Advanced Models**:
-   - Experiment with non-linear models (e.g., decision trees, XGBoost) or regularization techniques.
-4. **Optimization Insights**:
+3. **Optimization Insights**:
    - Use findings to build actionable recommendations for campaign strategies.
 
 ---
